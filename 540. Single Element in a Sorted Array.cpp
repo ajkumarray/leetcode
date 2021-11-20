@@ -14,7 +14,7 @@ public:
         int ans;
         while (l <= r)
         {
-            int mid = (l + r) >> 1;
+            int mid = l + (r - l) / 2;
             if (mid & 1)
                 mid--;
             if (mid + 1 < n && nums[mid] == nums[mid + 1])
