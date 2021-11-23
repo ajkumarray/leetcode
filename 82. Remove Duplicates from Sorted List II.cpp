@@ -5,32 +5,38 @@
 using namespace std;
 
 //      sorted list II
-ListNode *deleteDuplicates(ListNode *head)
-{
-    if (head == NULL)
-        return head;
 
-    if (head->next == NULL)
+class Solution
+{
+    ListNode *deleteDuplicates(ListNode *head)
     {
-        head->next = deleteDuplicates(head->next);
-    }
-    else
-    {
-        if (head->val == head->next->val)
+        if (!head or !head->next)
+            return head;
+        ListNode *curr = head, *prev = NULL;
+        while (curr)
         {
-            if (head->next->next == NULL)
+            if (curr->next and curr->next->val == curr->val)
             {
-                head = NULL;
+                int val = curr->val;
+                while (curr and curr->val == val)
+                {
+                    curr = curr->next;
+                }
+                if (prev == NULL)
+                {
+                    head = curr;
+                }
+                else
+                {
+                    prev->next = curr;
+                }
             }
             else
-                head = head->next->next;
-            head = deleteDuplicates(head);
+            {
+                prev = curr;
+                curr = curr->next;
+            }
         }
-        else
-            head->next = deleteDuplicates(head->next);
+        return head;
     }
-
-    return head;
-}
-}
-;
+};
