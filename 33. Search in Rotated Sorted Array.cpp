@@ -1,5 +1,9 @@
 //   33. Search in Rotated Sorted Array
 
+#include <bits/stdc++.h>
+
+using namespace std;
+
 class Solution
 {
 public:
