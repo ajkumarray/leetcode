@@ -1,5 +1,9 @@
 //  34. Find First and Last Position of Element in Sorted Array
 
+#include <bits/stdc++.h>
+
+using namespace std;
+
 class Solution
 {
 public:
