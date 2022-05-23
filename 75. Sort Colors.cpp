@@ -19,7 +19,7 @@ public:
             else if (nums[i] == 2)
             {
                 swap(nums[i], nums[r--]);
-                i--;
+                i--;        //  last se jo swap hokar aayega usko bhi check karna hoga
             }
         }
     }
